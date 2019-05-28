@@ -19,6 +19,7 @@
 [![status](https://img.shields.io/badge/status-stable-green.svg)](https://www.npmjs.com/package/swagger-merger)
 
 ## Features
+
 - [x] _Merge_ ***multiple*** swagger files into ***a*** swagger file.
 - [x] _$ref_ - A tag, include a **single-level** of swagger file.
 - [x] _$ref#*_ - A tag, include a **multi-level** of swagger file.
@@ -28,6 +29,7 @@
 ## Usage
 
 ### $ref
+
 > Includes a _single-level_ of swagger file.
 
 - [Official standards](https://swagger.io/docs/specification/using-ref/)
@@ -47,6 +49,7 @@ responses:
 ```
 
 ### $ref#*
+
 > Includes a _multi-level_ of swagger file.
 
 - Non-standard, suggest you use it for yourself
@@ -63,6 +66,7 @@ definitions:
 ```
 
 ### CLI
+
 > How to use?
 
 ```bash
@@ -96,11 +100,13 @@ swagger-merger -i in.json -o out.yaml    # Merge in.json into out.yaml
 ```
 
 ## Install
+
 ```bash
 npm install swagger-merger -g
 ```
 
 ## Examples
+
 > It would be more helpful to see these examples.
 
 Open the terminal, **choose** one of the following ways: 
@@ -126,6 +132,7 @@ Open the terminal, **choose** one of the following ways:
 Then, these examples may help you:
 
 ### [heroku-pets](https://github.com/WindomZ/swagger-merger/tree/master/example/heroku-pets)
+
 - Official swagger example
 - _No_ modification
 
@@ -134,6 +141,7 @@ Go to `example/heroku-pets`
 1. The output `swagger.yaml` is similar to the expected `heroku-pets.yaml`.
 
 ### [echo](https://github.com/WindomZ/swagger-merger/tree/master/example/echo)
+
 - Base on official swagger example
 - _Modify_ to support for [$ref](#ref) tags
 
@@ -142,6 +150,7 @@ Go to `example/echo`
 1. The output `swagger.yaml` is similar to the expected `echo.yaml`.
 
 ### [petstore_simple](https://github.com/WindomZ/swagger-merger/tree/master/example/petstore_simple)
+
 - Base on official swagger example
 - _Modify_ to support for [$ref#*](#ref-1) tags
 
@@ -150,6 +159,7 @@ Go to `example/petstore_simple`
 1. The output `swagger.yaml` is similar to the expected `petstore_simple.yaml`.
 
 ### [petstore_domain](https://github.com/WindomZ/swagger-merger/tree/master/example/petstore_domain)
+
 > A way of using [$ref](#ref) instead of [$ref#*](#ref-1), and better compatibility.
 
 - Same as [petstore_simple](#examplepetstore_simple)
@@ -161,10 +171,12 @@ Go to `example/petstore_domain`
 1. The output `swagger.yaml` is similar to the expected `petstore_simple.yaml`.
 
 ## Contributing
+
 Welcome to pull requests, report bugs, suggest ideas and discuss **swagger-merger**, 
 i would love to hear what you think about **swagger-merger** on [issues page](https://github.com/WindomZ/swagger-merger/issues).
 
 If you like it then you can put a :star: on it.
 
 ## License
+
 [MIT](https://github.com/WindomZ/swagger-merger/blob/master/LICENSE)
