@@ -13,13 +13,14 @@ let noArgs = true
 
 program
   .version(require('../package.json').version)
-  .usage('[-h] [-v] [-c] [-o file] <-i file | file>')
+  .usage('[-h] [-v] [-c] [-m] [-o file] <-i file | file>')
   .description('Merge multiple swagger files into a swagger file, just support JSON/YAML.')
   .option('-i, --input <*.json|yaml|yml file>', 'input a main/entry JSON/YAML swagger file, MANDATORY',
     /^.+\.(json|yaml|yml)$/gi, null)
   .option('-o, --output <*.json|yaml|yml file>', 'output a merged JSON/YAML swagger file, default is `swagger.*`',
     /^.+\.(json|yaml|yml)$/gi, null)
   .option('-c, --compact', 'compact JSON/YAML format string', null, null)
+  .option('-m, --deep-merge', 'enable deep-merge on resolving $ref', null, false)
   .option('--debug', 'debug mode, such as print error tracks', null, null)
   .action((options) => {
     noArgs = !(options.input)
@@ -30,7 +31,8 @@ program
     merger({
       input: options.input || '',
       output: options.output || '',
-      compact: options.compact
+      compact: options.compact,
+      deepMerge: options.deepMerge
     }).catch(e => {
       if (options.debug) {
         console.error(e)
